@@ -2,6 +2,7 @@ import { MdDarkMode, MdOutlineWbSunny } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { useTheme } from "../../hooks/useDarkMode";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
   const { changeTheme, mode } = useTheme();
@@ -31,7 +32,12 @@ const Navbar = () => {
             </svg>
           </label>
         </div>
-        <div className=" px-2 mx-2 text-xl font-bold">Tong Adda</div>
+        <Link
+          to="/"
+          className=" px-2 mx-2 text-4xl font-kaushanFont text-darkBrownHover font-bold"
+        >
+          TongAdda
+        </Link>
         <div className="flex-none hidden lg:block">
           <div className="flex justify-center items-center gap-1">
             {/* Navbar menu content here */}
@@ -45,86 +51,26 @@ const Navbar = () => {
             >
               Home
             </NavLink>
-            <div className="dropdown dropdown-hover">
-              <label tabIndex={0} className="m-1">
-                <NavLink
-                  to="/service"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "text-sm capitalize font-medium border-b-4 border-darkBrown border-l-0 border-t-0 border-r-0 "
-                      : "btn btn-ghost btn-sm text-sm capitalize"
-                  }
-                >
-                  Service
-                </NavLink>
-              </label>
-              <ul
-                tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 mt-5  shadow bg-base-100 rounded-b-xl w-52"
-              >
-                <li>
-                  <a>Item 1</a>
-                </li>
-                <li>
-                  <a>Item 2</a>
-                </li>
-              </ul>
-            </div>
-            <div className="dropdown dropdown-hover">
-              <label tabIndex={0} className="m-1">
-                <NavLink
-                  to="/Menu"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "text-sm capitalize font-medium border-b-4 border-darkBrown border-l-0 border-t-0 border-r-0 "
-                      : "btn btn-ghost btn-sm text-sm capitalize"
-                  }
-                >
-                  Menu
-                </NavLink>
-              </label>
-              <ul
-                tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 mt-5  shadow bg-base-100 rounded-b-xl w-52"
-              >
-                <li>
-                  <a>Item 1</a>
-                </li>
-                <li>
-                  <a>Item 2</a>
-                </li>
-              </ul>
-            </div>
             <NavLink
-                  to="/addService"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "text-sm capitalize font-medium border-b-4 border-darkBrown border-l-0 border-t-0 border-r-0 "
-                      : "btn btn-ghost btn-sm text-sm capitalize"
-                  }
-                >
-                  Added Service
-                </NavLink>
+              to="/services"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-sm capitalize font-medium border-b-4 border-darkBrown border-l-0 border-t-0 border-r-0 "
+                  : "btn btn-ghost btn-sm text-sm capitalize"
+              }
+            >
+              Service
+            </NavLink>
             <NavLink
-                  to="/manageService"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "text-sm capitalize font-medium border-b-4 border-darkBrown border-l-0 border-t-0 border-r-0 "
-                      : "btn btn-ghost btn-sm text-sm capitalize"
-                  }
-                >
-                  Manage Service
-                </NavLink>
-            <NavLink
-                  to="/schedule"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "text-sm capitalize font-medium border-b-4 border-darkBrown border-l-0 border-t-0 border-r-0 "
-                      : "btn btn-ghost btn-sm text-sm capitalize"
-                  }
-                >
-                  Schedule
-                </NavLink>
+              to="/menu"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-sm capitalize font-medium border-b-4 border-darkBrown border-l-0 border-t-0 border-r-0 "
+                  : "btn btn-ghost btn-sm text-sm capitalize"
+              }
+            >
+              Menu
+            </NavLink>
             <NavLink
               to="/about"
               className={({ isActive }) =>
@@ -133,7 +79,7 @@ const Navbar = () => {
                   : "btn btn-ghost btn-sm text-sm capitalize"
               }
             >
-              About
+              about
             </NavLink>
             <NavLink
               to="/contact"
@@ -145,6 +91,56 @@ const Navbar = () => {
             >
               Contact
             </NavLink>
+              <div className="dropdown dropdown-hover">
+                <label tabIndex={0} className="btn btn-ghost btn-sm font-medium capitalize text-sm">
+                  Dashboard<IoIosArrowDown/>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content z-[1] menu p-2 mt-5 shadow bg-white dark:bg-zinc-700 rounded-b-lg w-52"
+                >
+                  <NavLink
+                    to="/addServices"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-sm capitalize font-medium border-t-4 border-darkBrown text-center mb-3 border-l-0 rounded-2xl"
+                        : "btn btn-ghost btn-sm text-sm capitalize"
+                    }
+                  >
+                    Add Service
+                  </NavLink>
+                  <NavLink
+                    to="/singleServices"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-sm capitalize font-medium border-t-4 border-darkBrown text-center my-3 border-l-0 rounded-2xl"
+                        : "btn btn-ghost btn-sm text-sm capitalize"
+                    }
+                  >
+                    Single Services
+                  </NavLink>
+                  <NavLink
+                    to="/manageServices"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-sm capitalize font-medium border-t-4 border-darkBrown text-center my-3 border-l-0 rounded-2xl"
+                        : "btn btn-ghost btn-sm text-sm capitalize"
+                    }
+                  >
+                    Manage Service
+                  </NavLink>
+                  <NavLink
+                    to="/schedules"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-sm capitalize font-medium border-t-4 border-darkBrown text-center my-3 border-l-0 rounded-2xl"
+                        : "btn btn-ghost btn-sm text-sm capitalize"
+                    }
+                  >
+                    My Schedule
+                  </NavLink>
+                </ul>
+              </div>
           </div>
         </div>
         <div className="flex justify-center items-center gap-2">

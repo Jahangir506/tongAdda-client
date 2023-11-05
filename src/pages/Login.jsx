@@ -15,7 +15,6 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleGoogleSignIn = () => {
-    const toastId = toast.loading("Logging in");
     googleSignIn()
       .then((result) => {
         const user = result.user;
@@ -31,12 +30,15 @@ const Login = () => {
             console.log(data);
           });
         console.log(user);
-        toast.success("Login Successfully", { id: toastId });
+        Swal.fire({
+          title: "Login Successfully",
+          icon: "success",
+        });
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         console.error(err.message);
-        toast.error(err.message, { id: toastId });
+        toast.error("Email is already Use!");
       });
   };
 
@@ -138,7 +140,7 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn bg-darkBrown hover:bg-darkBrownHover border-none text-white">
                   Login
                 </button>
               </div>

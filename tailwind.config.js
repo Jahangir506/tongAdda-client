@@ -10,8 +10,11 @@ export default {
       colors: {
         'darkBrown': "#FF5757",
         "darkBrownHover": "#ef4444",
-        "coffeeBrown": "#995C2D"
+        "coffeeBrown": "#995C2D",
       },
+    },
+    fontFamily: {
+      kaushanFont: '"Kaushan Script", cursive',
     },
   },
   plugins: [require("daisyui")],

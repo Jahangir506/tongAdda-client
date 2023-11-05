@@ -15,7 +15,7 @@ const MainLayouts = ({ children }) => {
           {/* Page content here */}
           {children}
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side top-16">
           <label
             htmlFor="my-drawer-3"
             aria-label="close sidebar"
