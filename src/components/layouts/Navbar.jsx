@@ -95,9 +95,7 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-            <div className="dropdown dropdown-hover">
-              <label tabIndex={0} className="m-1">
-                <NavLink
+            <NavLink
                   to="/addService"
                   className={({ isActive }) =>
                     isActive
@@ -107,22 +105,7 @@ const Navbar = () => {
                 >
                   Added Service
                 </NavLink>
-              </label>
-              <ul
-                tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 mt-5  shadow bg-base-100 rounded-b-xl w-52"
-              >
-                <li>
-                  <a>Item 1</a>
-                </li>
-                <li>
-                  <a>Item 2</a>
-                </li>
-              </ul>
-            </div>
-            <div className="dropdown dropdown-hover">
-              <label tabIndex={0} className="m-1">
-                <NavLink
+            <NavLink
                   to="/manageService"
                   className={({ isActive }) =>
                     isActive
@@ -132,22 +115,7 @@ const Navbar = () => {
                 >
                   Manage Service
                 </NavLink>
-              </label>
-              <ul
-                tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 mt-5  shadow bg-base-100 rounded-b-xl w-52"
-              >
-                <li>
-                  <a>Item 1</a>
-                </li>
-                <li>
-                  <a>Item 2</a>
-                </li>
-              </ul>
-            </div>
-            <div className="dropdown dropdown-hover">
-              <label tabIndex={0} className="m-1">
-                <NavLink
+            <NavLink
                   to="/schedule"
                   className={({ isActive }) =>
                     isActive
@@ -157,19 +125,6 @@ const Navbar = () => {
                 >
                   Schedule
                 </NavLink>
-              </label>
-              <ul
-                tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 mt-5  shadow bg-base-100 rounded-b-xl w-52"
-              >
-                <li>
-                  <a>Item 1</a>
-                </li>
-                <li>
-                  <a>Item 2</a>
-                </li>
-              </ul>
-            </div>
             <NavLink
               to="/about"
               className={({ isActive }) =>
@@ -199,46 +154,43 @@ const Navbar = () => {
           >
             <div>
               {mode === "dark" ? (
-                <MdOutlineWbSunny className="" />
+                <MdOutlineWbSunny className="text-white" />
               ) : (
                 <MdDarkMode className="" />
               )}
             </div>
           </button>
 
-          {user?.email ? (
+          {user ? (
             <div className="dropdown dropdown-end ml-2">
-            <label
-              tabIndex={0}
-              className="btn btn-ghost btn-circle avatar"
-            >
-              <div className="w-10 rounded-full">
-                {user && <img src={user?.photoURL} />}
-              </div>
-            </label>
-            <ul
-                      tabIndex={0}
-                      className="menu dropdown-content z-[1] p-4 shadow bg-base-100 rounded-box w-40 mt-4"
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  {user && <img src={user?.photoURL} />}
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu dropdown-content z-[1] p-4 shadow dark:bg-zinc-700  bg-base-100 rounded-box w-40 mt-4"
+              >
+                <div className="text-center dark:text-white">
+                  {user && <p className="mb-3">{user?.displayName}</p>}
+                  <Link to="/login">
+                    <button
+                      onClick={logout}
+                      className="py-2 text-white bg-darkBrown hover:bg-darkBrownHover px-8 text-md rounded-md"
                     >
-                      <div className="text-center dark:text-black">
-                        {user && <p className="mb-3">{user?.displayName}</p>}
-                        <Link to="/login">
-                        <button
-              onClick={logout}
-              className="py-2 text-white bg-darkBrown hover:bg-darkBrownHover px-8 text-md rounded-md"
-            >
-              Logout
-            </button>
-                        </Link>
-                      </div>
-                    </ul>
+                      Logout
+                    </button>
+                  </Link>
+                </div>
+              </ul>
             </div>
           ) : (
             <NavLink
               to="/login"
               className={({ isActive }) =>
                 isActive
-                  ? "btn btn-primary btn-sm bg-darkBrown border-none"
+                  ? "py-2 text-white bg-darkBrown hover:bg-darkBrownHover px-8 text-md rounded-md"
                   : "py-2 text-white bg-darkBrown hover:bg-darkBrownHover px-8 text-md rounded-md"
               }
             >

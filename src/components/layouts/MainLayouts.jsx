@@ -9,7 +9,7 @@ const MainLayouts = ({ children }) => {
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
-          <div className=" fixed top-0 z-50 w-full navbar bg-yellow-300 dark:bg-yellow-300/25">
+          <div className=" fixed top-0 z-50 w-full navbar bg-yellow-300 dark:bg-zinc-700/95">
            <Navbar></Navbar>
           </div>
           {/* Page content here */}
