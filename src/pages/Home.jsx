@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
+import loadingImg from "../assets/images/BeanEater.gif";
 import introImg from "../assets/images/intro.jpg";
 import Container from "../components/ui/Container";
 import Services from "./Services/Services";
-import loadingImg from "../assets/images/BeanEater.gif"
 
 const Home = () => {
   const { data: services, isLoading } = useQuery({
     queryKey: ["services"],
     queryFn: async () => {
-      const data = await fetch("http://localhost:5007/services");
+      const data = await fetch("https://tong-adda-server.vercel.app/services");
       return await data.json();
     },
   });
