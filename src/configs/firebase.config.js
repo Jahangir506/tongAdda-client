@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD-VoCYKO4WUhy_akh_CjnmWVhn9U3fu5M",
-  authDomain: "tong-adda.firebaseapp.com",
-  projectId: "tong-adda",
-  storageBucket: "tong-adda.appspot.com",
-  messagingSenderId: "987378898385",
-  appId: "1:987378898385:web:1567ca4d9de5d5a4adbcf0"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 
