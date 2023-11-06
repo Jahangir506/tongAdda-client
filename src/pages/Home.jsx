@@ -1,13 +1,43 @@
+import { useQuery } from "@tanstack/react-query";
 import introImg from "../assets/images/intro.jpg";
 import Container from "../components/ui/Container";
+import Services from "./Services/Services";
+import loadingImg from "../assets/images/BeanEater.gif"
 
 const Home = () => {
+  const { data: services, isLoading } = useQuery({
+    queryKey: ["services"],
+    queryFn: async () => {
+      const data = await fetch("http://localhost:5007/services");
+      return await data.json();
+    },
+  });
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <img src={loadingImg} alt="" className="w-60"/>
+      </div>
+    );
+  }
+
   return (
     <>
       <Container>
-      <div className="flex my-28 gap-8">
+        <div>
+          <h1 className="text-center font-bold text-5xl mb-20">Our Services</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto justify-items-center gap-y-16 items-center">
+            {
+              services.map(service => <Services key={service._id} service={service}></Services>)
+            }
+          </div>
+        </div>
+        <div className="flex my-28 gap-8">
           <div className="w-1/2 space-y-10">
-            <h1 className="text-7xl font-bold">Quality Cleaning <br/> <span className="text-red-800">for Your Home</span></h1>
+            <h1 className="text-7xl font-bold">
+              Quality Cleaning <br />{" "}
+              <span className="text-red-800">for Your Home</span>
+            </h1>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet
               deserunt soluta eius asperiores et natus molestias adipisci
@@ -15,7 +45,9 @@ const Home = () => {
               facere, aspernatur eveniet mollitia.
             </p>
             <div className="space-x-4">
-              <button className="btn bg-red-800 hover:bg-red-700 text-white ">Book a Service</button>
+              <button className="btn bg-red-800 hover:bg-red-700 text-white ">
+                Book a Service
+              </button>
               <button className="btn">Read more</button>
             </div>
             <div className="divider"></div>
@@ -48,9 +80,9 @@ const Home = () => {
             </div>
           </div>
           <div className="h-[600px] w-1/2 bg-red-800 rounded-md overflow-hidden">
-            <img src={introImg} alt="" className="w-full h-full object-cover"/>
+            <img src={introImg} alt="" className="w-full h-full object-cover" />
           </div>
-      </div>
+        </div>
       </Container>
     </>
   );

@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom"
 import MainLayouts from "./components/layouts/MainLayouts"
-import ErrorPages from "./pages/ErrorPages/ErrorPages"
 
 function App() {
 

@@ -8,6 +8,7 @@ import useAuth from "../hooks/useAuth";
 
 const Register = () => {
   const [name, setName] = useState("");
+  const [photoURL, setPhotoURL] = useState()
   const [showPass, setShowPass] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,6 +20,7 @@ const Register = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
+        
         fetch("https://brand-shop-server-repo.vercel.app/user", {
           method: "POST",
           headers: {
@@ -73,8 +75,8 @@ const Register = () => {
       await createUser(email, password).then((result) => {
         const registerUser = result.user;
         console.log(registerUser);
-
-        const user = { name, email, password };
+        const user = { name, email, password, photoURL };
+        console.log(user);
         fetch("https://brand-shop-server-repo.vercel.app/user", {
           method: "POST",
           headers: {
@@ -102,7 +104,7 @@ const Register = () => {
       <div className="hero mt-28 bg-base-200">
         <div className="hero-content w-full flex-col">
           <h1 className="text-5xl font-bold mb-4">Register now!</h1>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl dark:bg-zinc-700 bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl  dark:bg-zinc-700 bg-base-100">
             <form onSubmit={handleSubmit} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -113,7 +115,19 @@ const Register = () => {
                   placeholder="name"
                   className="input input-bordered"
                   required
-                  onBlur={(e) => setName(e.target.value)}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo URL</span>
+                </label>
+                <input
+                  type="photoURL"
+                  placeholder="photo"
+                  className="input input-bordered"
+                  required
+                  onChange={(e) => setPhotoURL(e.target.value)}
                 />
               </div>
               <div className="form-control">
@@ -125,7 +139,7 @@ const Register = () => {
                   placeholder="email"
                   className="input input-bordered"
                   required
-                  onBlur={(e) => setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="form-control">
@@ -138,7 +152,7 @@ const Register = () => {
                     placeholder="password"
                     className="input input-bordered w-full"
                     required
-                    onBlur={(e) => setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                   <span
                     onClick={() => setShowPass(!showPass)}

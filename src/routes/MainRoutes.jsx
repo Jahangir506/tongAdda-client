@@ -31,7 +31,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'menu',
-                element: <PrivateRoutes><Menu></Menu></PrivateRoutes>
+                element:<Menu></Menu>
             },
             {
                 path: 'singleServices',

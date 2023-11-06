@@ -1,8 +1,8 @@
+import { IoIosArrowDown } from "react-icons/io";
 import { MdDarkMode, MdOutlineWbSunny } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { useTheme } from "../../hooks/useDarkMode";
-import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
   const { changeTheme, mode } = useTheme();
@@ -91,13 +91,14 @@ const Navbar = () => {
             >
               Contact
             </NavLink>
-              <div className="dropdown dropdown-hover">
+            { user &&
+                <div className="dropdown dropdown-hover">
                 <label tabIndex={0} className="btn btn-ghost btn-sm font-medium capitalize text-sm">
                   Dashboard<IoIosArrowDown/>
                 </label>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 mt-5 shadow bg-white dark:bg-zinc-700 rounded-b-lg w-52"
+                  className="dropdown-content z-[1] menu p-2 mt-[17px] shadow bg-white dark:bg-zinc-700 rounded-b-lg w-52"
                 >
                   <NavLink
                     to="/addServices"
@@ -141,6 +142,7 @@ const Navbar = () => {
                   </NavLink>
                 </ul>
               </div>
+            }
           </div>
         </div>
         <div className="flex justify-center items-center gap-2">

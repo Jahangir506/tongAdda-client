@@ -46,8 +46,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const toastId = toast.loading("Logging in");
-
+    
     if (password.length < 6) {
       Swal.fire("Opps!", "you have to enter at least 6 digit!", "error");
       return;
@@ -70,6 +69,8 @@ const Login = () => {
       );
       return;
     }
+
+    const toastId = toast.loading("Logging in");
 
     await signIn(email, password)
       .then((result) => {
@@ -140,7 +141,10 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button type="submit" className="btn bg-darkBrown hover:bg-darkBrownHover border-none text-white">
+                <button
+                  type="submit"
+                  className="btn bg-darkBrown hover:bg-darkBrownHover border-none text-white"
+                >
                   Login
                 </button>
               </div>
@@ -152,8 +156,10 @@ const Login = () => {
                       <FaGithub className="text-2xl" />
                     </Link>
                     <Link>
-                      
-                      <FcGoogle onClick={handleGoogleSignIn} className="text-2xl" />
+                      <FcGoogle
+                        onClick={handleGoogleSignIn}
+                        className="text-2xl"
+                      />
                     </Link>
                   </div>
                 </div>
