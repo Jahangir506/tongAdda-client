@@ -1,9 +1,13 @@
 import PropTypes from "prop-types";
+import Banner from "../Banner/Banner";
 
 const Container = ({ children }) => {
   return (
     <>
-      <div className="max-w-7xl mx-auto px-[50px] my-36">{children}</div>
+     <div>
+          <Banner></Banner>
+        </div>
+      <div className="max-w-7xl mx-auto px-[50px]">{children}</div>
       <footer className="footer footer-center p-10 bg-zinc-700 text-white">
         <aside>
           <svg

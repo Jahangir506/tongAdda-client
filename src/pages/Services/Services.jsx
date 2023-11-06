@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Services = ({ service }) => {
-  console.log(Object.keys(service).join(","));
+  // console.log(Object.keys(service).join(","));
   const {
     _id,
     service_image,
@@ -11,11 +11,11 @@ const Services = ({ service }) => {
   } = service || {};
   return (
     <>
-      <div className="card w-80 bg-base-100 shadow-xl">
+      <div className="card w-96 bg-base-100 shadow-xl">
         <figure>
           <img src={service_image} alt="Shoes" />
         </figure>
-        <div className="card-body">
+        <div className="card-body p-4">
           <h2 className="card-title text-center text-3xl">{service_name}</h2>
           <p className="my-4">
             {service_description.slice(0, 50)}{" "}

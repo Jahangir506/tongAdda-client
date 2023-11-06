@@ -24,9 +24,10 @@ const Home = () => {
   return (
     <>
       <Container>
+       
         <div>
           <h1 className="text-center font-bold text-5xl mb-20">Our Services</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto justify-items-center gap-y-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto justify-items-center gap-y-16 items-center">
             {
               services.map(service => <Services key={service._id} service={service}></Services>)
             }
