@@ -10,8 +10,8 @@ import ErrorPages from "../pages/ErrorPages/ErrorPages";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Menu from "../pages/Menu/Menu";
+import Services from "../pages/PopularServices/PopularServices";
 import Register from "../pages/Register";
-import Services from "../pages/Services/Services";
 import ShowAllServices from "../pages/ShowAllServices/ShowAllServices";
 import SingleServices from "../pages/SingleServices/SingleServices";
 import PrivateRoutes from "./PrivateRoutes";
@@ -35,10 +35,6 @@ const routes = createBrowserRouter([
                 element:<Menu></Menu>
             },
             {
-                path: 'singleServices',
-                element: <PrivateRoutes><SingleServices></SingleServices></PrivateRoutes>
-            },
-            {
                 path: 'addServices',
                 element: <PrivateRoutes><AddServices></AddServices></PrivateRoutes>
             },
@@ -53,6 +49,11 @@ const routes = createBrowserRouter([
             {
                 path: 'showAllServices',
                 element: <ShowAllServices></ShowAllServices>
+            },
+            {
+                path: '/services/singleService/:id',
+                element: <PrivateRoutes><SingleServices></SingleServices></PrivateRoutes>,
+                loader: ({params}) => fetch(`http://localhost:5007/services/${params.id}`)
             },
             {
                 path: 'about',

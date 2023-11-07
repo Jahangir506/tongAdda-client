@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Services = ({ service }) => {
-  // console.log(Object.keys(service).join(","));
+const PopularServices = ({service}) => {
   const {
     _id,
     service_image,
@@ -34,6 +33,5 @@ const Services = ({ service }) => {
         </div>
       </div>
     </>
-  );
-};
-export default Services;
+  );}
+export default PopularServices;

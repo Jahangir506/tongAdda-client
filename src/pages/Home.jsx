@@ -3,17 +3,10 @@ import loadingImg from "../assets/images/BeanEater.gif";
 import introImg from "../assets/images/intro.jpg";
 import Container from "../components/ui/Container";
 import { useServices } from "../hooks/useServices";
-import Services from "./Services/Services";
+import Services from "./PopularServices/PopularServices";
 
 const Home = () => {
   const {services, isLoading} = useServices();
-  // const { data: services, isLoading } = useQuery({
-  //   queryKey: ["services"],
-  //   queryFn: async () => {
-  //     const data = await fetch("https://tong-adda-server.vercel.app/services");
-  //     return await data.json();
-  //   },
-  // });
 
   if (isLoading) {
     return (

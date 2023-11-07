@@ -1,15 +1,12 @@
-import { Outlet } from "react-router-dom"
-import MainLayouts from "./components/layouts/MainLayouts"
+import { Outlet } from "react-router-dom";
+import MainLayouts from "./components/layouts/MainLayouts";
 
 function App() {
-
   return (
-    <>
-     <MainLayouts>
+    <MainLayouts>
       <Outlet></Outlet>
-     </MainLayouts>
-    </>
-  )
+    </MainLayouts>
+  );
 }
 
-export default App
+export default App;
