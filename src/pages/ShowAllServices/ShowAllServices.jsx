@@ -1,3 +1,4 @@
+import ScrollToTop from "react-scroll-to-top";
 import loadingImg from "../../assets/images/BeanEater.gif";
 import { useServices } from "../../hooks/useServices";
 import Footer from "../Footer/Footer";
@@ -44,6 +45,14 @@ const ShowAllServices = () => {
         </div>
       </div>
       <div className="flex flex-[1] gap-14 justify-center border-t">
+        <ScrollToTop
+          smooth
+          top="20"
+          color="red"
+          viewBox="0 0 150 256"
+          width="28"
+          height="28"
+        />
         <div className="grid grid-cols-1 bg-red-100/20 justify-items-center pt-8 pb-20 gap-y-16 items-center border-r border-l px-48">
           {allService.map((service) => (
             <ShowAllServicesCard

@@ -91,10 +91,14 @@ const Navbar = () => {
             >
               Contact
             </NavLink>
-            { user &&
-                <div className="dropdown dropdown-hover">
-                <label tabIndex={0} className="btn btn-ghost btn-sm font-medium capitalize text-sm">
-                  Dashboard<IoIosArrowDown/>
+            {user && (
+              <div className="dropdown dropdown-hover">
+                <label
+                  tabIndex={0}
+                  className="btn btn-ghost btn-sm font-medium capitalize text-sm"
+                >
+                  Dashboard
+                  <IoIosArrowDown />
                 </label>
                 <ul
                   tabIndex={0}
@@ -110,7 +114,7 @@ const Navbar = () => {
                   >
                     Add Service
                   </NavLink>
-                
+
                   <NavLink
                     to="/manageServices"
                     className={({ isActive }) =>
@@ -133,7 +137,7 @@ const Navbar = () => {
                   </NavLink>
                 </ul>
               </div>
-            }
+            )}
           </div>
         </div>
         <div className="flex justify-center items-center gap-2">
