@@ -24,7 +24,7 @@ const PopularServices = ({service}) => {
           </p>
           <div className="card-actions justify-between">
             <p className="">Price: {service_price}</p>
-            <Link>
+            <Link to={`/services/singleService/${_id}`}>
               <button className="btn btn-sm text-white border-none bg-darkBrown hover:bg-darkBrownHover">
                 Details
               </button>

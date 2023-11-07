@@ -1,6 +1,8 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const ShowAllServicesCard = ({ service }) => {
+  
   const {
     _id,
     service_image,
@@ -13,6 +15,9 @@ const ShowAllServicesCard = ({ service }) => {
 
   return (
     <>
+    <Helmet>
+      <title>TongAdda || ShowAllServices</title>
+    </Helmet>
       <div className="card w-full border">
         <figure>
           <img

@@ -1,10 +1,14 @@
 import axios from "axios";
+import loadingImg from "../../assets/images/BeanEater.gif";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
 import Footer from "../Footer/Footer";
+import { useServices } from "../../hooks/useServices";
 
 const SingleServices = () => {
+  const { isLoading } = useServices();
   const { user } = useAuth();
   const services = useLoaderData();
     const navigate = useNavigate()
@@ -56,9 +60,19 @@ const SingleServices = () => {
         }
       });
   };
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <img src={loadingImg} alt="" className="w-60" />
+      </div>
+    );
+  }
 
   return (
     <>
+    <Helmet>
+      <title>TongAdda || singleService</title>
+    </Helmet>
       <div className="max-w-7xl mx-auto my-32">
         <div className="card lg:card-side">
           <figure>
@@ -202,6 +216,7 @@ const SingleServices = () => {
                                   name="date"
                                   placeholder="Service Talking Date"
                                   className="input input-bordered w-full select-warning dark:bg-black/10"
+                                  required
                                 />
                               </label>
                             </div>
@@ -217,6 +232,7 @@ const SingleServices = () => {
                                   name="price"
                                   placeholder="Price"
                                   defaultValue={service_price}
+                                  disabled
                                   className="input input-bordered w-full select-warning dark:bg-black/10 opacity-50"
                                 />
                               </label>
@@ -238,6 +254,7 @@ const SingleServices = () => {
                                   rows="4"
                                   placeholder="Special instruction"
                                   className="dark:bg-black/10 w-full rounded-lg p-4 textarea textarea-warning"
+                                  required
                                 ></textarea>
                               </label>
                             </div>

@@ -1,3 +1,4 @@
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import loadingImg from "../assets/images/BeanEater.gif";
 import introImg from "../assets/images/intro.jpg";
@@ -6,7 +7,7 @@ import { useServices } from "../hooks/useServices";
 import Services from "./PopularServices/PopularServices";
 
 const Home = () => {
-  const {services, isLoading} = useServices();
+  const { services, isLoading } = useServices();
 
   if (isLoading) {
     return (
@@ -19,6 +20,9 @@ const Home = () => {
   return (
     <>
       <Container>
+        <Helmet>
+          <title>TongAdda || Home</title>
+        </Helmet>
         <div>
           <h1 className="text-center font-bold text-5xl mb-20">
             Popular Services
@@ -29,10 +33,10 @@ const Home = () => {
             ))}
           </div>
           <div className="flex justify-center items-center my-16">
-            <Link to='/showAllServices'>
-            <button className="btn bg-darkBrown hover:bg-darkBrownHover border-none text-white capitalize">
-              Show All Services
-            </button>
+            <Link to="/showAllServices">
+              <button className="btn bg-darkBrown hover:bg-darkBrownHover border-none text-white capitalize">
+                Show All Services
+              </button>
             </Link>
           </div>
         </div>

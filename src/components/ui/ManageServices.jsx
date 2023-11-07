@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import Footer from "../../pages/Footer/Footer";
 
 const ManageServices = () => {
   return (
     <>
+    <Helmet>
+      <title>TongAdda || Dashboard/Manage Service</title>
+    </Helmet>
       <div className="max-w-7xl mx-auto my-24">
         <div className="space-y-10">
           <h1 className="text-7xl font-bold">
