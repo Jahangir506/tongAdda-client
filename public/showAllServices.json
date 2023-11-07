@@ -1,0 +1,230 @@
+[
+  {
+    "service_image": "https://i.ibb.co/wdG5h89/Basically-Egg-Drop-Tomato-Soup.png",
+    "service_name": "Tomato and Egg Drop Noodle Soup",
+    "service_description": "The combination of tomato, egg, and noodles is a beloved dish in the cuisine of Hong Kong cha chaan teng, tea cafés that date back to the 1850s. There are many variations of this dish: Often, the egg is scrambled and mixed through a tangy tomato and macaroni soup; other times, a thick tomato soup is served with instant noodles and a fried egg on top. This recipe from Hetty McKinnon takes its cues from dan faa tong, which translates to “egg flower soup” (more commonly known as egg drop soup), a reference to the way the egg flocculates and blooms when dropped into the boiling soup.",
+    "view_detail_button": "https://example.com/service-1-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-1.jpg",
+      "provider_name": "Pearl Jones"
+    },
+    "service_area": "New York City",
+    "service_price": "$9.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/8cx3vRr/Basically-Salmon-Coconut-Soup.png",
+    "service_name": "Salmon Coconut Soup",
+    "service_description": "Packed with clear-your-sinuses heat, this comforting and spicy coconut soup will warm you up on cold nights. Inspired by the classic Thai soup tom kha gai, this version  from recipe developer Diana Yen has pieces of salmon instead of chicken and uses easy-to-find ginger instead of traditional galangal root. (If you have access to galangal, though, by all means use it!) Fresh lime juice adds a bright, tangy finish that balances out the richness of the coconut broth. Try serving it with vermicelli noodles for a heartier meal.",
+    "view_detail_button": "https://example.com/service-2-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-2.jpg",
+      "provider_name": " D'mytrek Brown"
+    },
+    "service_area": "Los Angeles",
+    "service_price": "$12.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/30Bxsfp/6421364123efd1430e8623e7-Fancy-Tea-Cup-Recommendations.webp",
+    "service_name": "Cream tea",
+    "service_description": "A classic for a reason. Also called a Devonshire tea, this one is kept nice and simple. It's freshly baked scones served with jam and clotted cream and paired with a simple tea (or coffee).",
+    "view_detail_button": "https://example.com/service-3-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-3.jpg",
+      "provider_name": "TeaWare Universe"
+    },
+    "service_area": "San Francisco",
+    "service_price": "$24.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/2FDSWX4/6421362567133107a9f17ce0-Cream-Tea-Recommendations.webp",
+    "service_name": "Tea Workshops",
+    "service_description": "Participate in immersive tea workshops to master the art of tea preparation and brewing. Ideal for tea enthusiasts of all levels.",
+    "view_detail_button": "https://example.com/service-4-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-4.jpg",
+      "provider_name": "TeaMaster Classes"
+    },
+    "service_area": "Chicago",
+    "service_price": "$29.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/Rc7Ksdc/Basically-Broccoli-Cheddar-Soup.png",
+    "service_name": "Tea Subscription",
+    "service_description": "Experience a monthly tea subscription, receiving unique tea selections curated by our experts. Expand your tea horizons effortlessly.",
+    "view_detail_button": "https://example.com/service-5-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-5.jpg",
+      "provider_name": "Tea Lovers Club"
+    },
+    "service_area": "Miami",
+    "service_price": "$19.99/month"
+  },
+  {
+    "service_image": "https://i.ibb.co/wSRt4kQ/images.jpg",
+    "service_name": "Tea for Events",
+    "service_description": "Elevate your special events with our tea catering services. We offer a range of teas and custom tea experiences for weddings, corporate gatherings, and more.",
+    "view_detail_button": "https://example.com/service-6-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-6.jpg",
+      "provider_name": "EventTea Creations"
+    },
+    "service_area": "Houston",
+    "service_price": "Custom Quote"
+  },
+  {
+    "service_image": "https://i.ibb.co/9t3bRKk/images.jpg",
+    "service_name": "Iced Tea Creations",
+    "service_description": "Beat the heat with our refreshing iced tea creations. Explore a variety of flavors and blends perfect for summertime enjoyment.",
+    "view_detail_button": "https://example.com/service-7-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-7.jpg",
+      "provider_name": "ChillTea"
+    },
+    "service_area": "Seattle",
+    "service_price": "$5.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/3kZnm66/images.jpg",
+    "service_name": "Tea and Pastry Pairing",
+    "service_description": "Savor the perfect harmony of teas and pastries. Our expertly paired combinations will delight your taste buds.",
+    "view_detail_button": "https://example.com/service-8-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-8.jpg",
+      "provider_name": "TastyTea Delights"
+    },
+    "service_area": "Austin",
+    "service_price": "$14.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/xhFyPRZ/images.jpg",
+    "service_name": "Tea Artistry Classes",
+    "service_description": "Unleash your creativity through our tea artistry classes. Learn the intricate art of tea decoration and presentation.",
+    "view_detail_button": "https://example.com/service-9-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-9.jpg",
+      "provider_name": "TeaArt Creations"
+    },
+    "service_area": "Boston",
+    "service_price": "$24.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/HDgVmb2/images.jpg",
+    "service_name": "Tea Artistry Classes",
+    "service_description": "Unleash your creativity through our tea artistry classes. Learn the intricate art of tea decoration and presentation.",
+    "view_detail_button": "https://example.com/service-9-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-9.jpg",
+      "provider_name": "TeaArt Creations"
+    },
+    "service_area": "Boston",
+    "service_price": "$24.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/84c7RrQ/images.jpg",
+    "service_name": "Tea Artistry Classes",
+    "service_description": "Unleash your creativity through our tea artistry classes. Learn the intricate art of tea decoration and presentation.",
+    "view_detail_button": "https://example.com/service-9-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-9.jpg",
+      "provider_name": "TeaArt Creations"
+    },
+    "service_area": "Boston",
+    "service_price": "$24.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/xYcbVjX/Latte-art-3.jpg",
+    "service_name": "Tea Artistry Classes",
+    "service_description": "Unleash your creativity through our tea artistry classes. Learn the intricate art of tea decoration and presentation.",
+    "view_detail_button": "https://example.com/service-9-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-9.jpg",
+      "provider_name": "TeaArt Creations"
+    },
+    "service_area": "Boston",
+    "service_price": "$24.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/gjSZFv9/images.jpg",
+    "service_name": "Tea Artistry Classes",
+    "service_description": "Unleash your creativity through our tea artistry classes. Learn the intricate art of tea decoration and presentation.",
+    "view_detail_button": "https://example.com/service-9-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-9.jpg",
+      "provider_name": "TeaArt Creations"
+    },
+    "service_area": "Boston",
+    "service_price": "$24.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/wCpq8fm/images.jpg",
+    "service_name": "Tea Artistry Classes",
+    "service_description": "Unleash your creativity through our tea artistry classes. Learn the intricate art of tea decoration and presentation.",
+    "view_detail_button": "https://example.com/service-9-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-9.jpg",
+      "provider_name": "TeaArt Creations"
+    },
+    "service_area": "Boston",
+    "service_price": "$24.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/q5tH62V/Latte-art-3.jpg",
+    "service_name": "Tea Artistry Classes",
+    "service_description": "Unleash your creativity through our tea artistry classes. Learn the intricate art of tea decoration and presentation.",
+    "view_detail_button": "https://example.com/service-9-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-9.jpg",
+      "provider_name": "TeaArt Creations"
+    },
+    "service_area": "Boston",
+    "service_price": "$24.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/Fsz8zhZ/gettyimages-83585872-2000-cc4cd5240f7a4b6f8fc8baf9a65a1690.webp",
+    "service_name": "Tea Artistry Classes",
+    "service_description": "Unleash your creativity through our tea artistry classes. Learn the intricate art of tea decoration and presentation.",
+    "view_detail_button": "https://example.com/service-9-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-9.jpg",
+      "provider_name": "TeaArt Creations"
+    },
+    "service_area": "Boston",
+    "service_price": "$24.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/WffzGCN/gettyimages-83585872-2000-cc4cd5240f7a4b6f8fc8baf9a65a1690.webp",
+    "service_name": "Tea Artistry Classes",
+    "service_description": "Unleash your creativity through our tea artistry classes. Learn the intricate art of tea decoration and presentation.",
+    "view_detail_button": "https://example.com/service-9-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-9.jpg",
+      "provider_name": "TeaArt Creations"
+    },
+    "service_area": "Boston",
+    "service_price": "$24.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/zWcTNsB/gettyimages-83585872-2000-cc4cd5240f7a4b6f8fc8baf9a65a1690.webp",
+    "service_name": "Tea Artistry Classes",
+    "service_description": "Unleash your creativity through our tea artistry classes. Learn the intricate art of tea decoration and presentation.",
+    "view_detail_button": "https://example.com/service-9-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-9.jpg",
+      "provider_name": "TeaArt Creations"
+    },
+    "service_area": "Boston",
+    "service_price": "$24.99"
+  },
+  {
+    "service_image": "https://i.ibb.co/GRvyC17/gettyimages-83585872-2000-cc4cd5240f7a4b6f8fc8baf9a65a1690.webp",
+    "service_name": "Tea Artistry Classes",
+    "service_description": "Unleash your creativity through our tea artistry classes. Learn the intricate art of tea decoration and presentation.",
+    "view_detail_button": "https://example.com/service-9-details",
+    "service_provider": {
+      "provider_image": "https://example.com/provider-9.jpg",
+      "provider_name": "TeaArt Creations"
+    },
+    "service_area": "Boston",
+    "service_price": "$24.99"
+  }
+]

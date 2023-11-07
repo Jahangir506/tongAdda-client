@@ -1,22 +1,24 @@
-import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 import loadingImg from "../assets/images/BeanEater.gif";
 import introImg from "../assets/images/intro.jpg";
 import Container from "../components/ui/Container";
+import { useServices } from "../hooks/useServices";
 import Services from "./Services/Services";
 
 const Home = () => {
-  const { data: services, isLoading } = useQuery({
-    queryKey: ["services"],
-    queryFn: async () => {
-      const data = await fetch("https://tong-adda-server.vercel.app/services");
-      return await data.json();
-    },
-  });
+  const {services, isLoading} = useServices();
+  // const { data: services, isLoading } = useQuery({
+  //   queryKey: ["services"],
+  //   queryFn: async () => {
+  //     const data = await fetch("https://tong-adda-server.vercel.app/services");
+  //     return await data.json();
+  //   },
+  // });
 
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <img src={loadingImg} alt="" className="w-60"/>
+        <img src={loadingImg} alt="" className="w-60" />
       </div>
     );
   }
@@ -24,13 +26,21 @@ const Home = () => {
   return (
     <>
       <Container>
-       
         <div>
-          <h1 className="text-center font-bold text-5xl mb-20">Our Services</h1>
+          <h1 className="text-center font-bold text-5xl mb-20">
+            Popular Services
+          </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto justify-items-center gap-y-16 items-center">
-            {
-              services.map(service => <Services key={service._id} service={service}></Services>)
-            }
+            {services.slice(0, 4).map((service) => (
+              <Services key={service._id} service={service}></Services>
+            ))}
+          </div>
+          <div className="flex justify-center items-center my-16">
+            <Link to='/showAllServices'>
+            <button className="btn bg-darkBrown hover:bg-darkBrownHover border-none text-white capitalize">
+              Show All Services
+            </button>
+            </Link>
           </div>
         </div>
         <div className="flex my-28 gap-8">

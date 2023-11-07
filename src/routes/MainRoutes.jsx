@@ -1,17 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import AdminLayouts from "../components/layouts/AdminLayouts";
+import AddServices from "../components/ui/AddServices";
+import ManageServices from "../components/ui/ManageServices";
+import Schedules from "../components/ui/MySchedules";
 import About from "../pages/About";
-import AddServices from "../pages/AddServices/AddServices";
 import Contact from "../pages/Contact";
 import ErrorPages from "../pages/ErrorPages/ErrorPages";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
-import ManageServices from "../pages/ManageServices/ManageServices";
 import Menu from "../pages/Menu/Menu";
 import Register from "../pages/Register";
-import Schedules from "../pages/Schedules/Schedules";
 import Services from "../pages/Services/Services";
+import ShowAllServices from "../pages/ShowAllServices/ShowAllServices";
 import SingleServices from "../pages/SingleServices/SingleServices";
 import PrivateRoutes from "./PrivateRoutes";
 
@@ -48,6 +49,10 @@ const routes = createBrowserRouter([
             {
                 path: 'schedules',
                 element: <PrivateRoutes><Schedules></Schedules></PrivateRoutes>
+            },
+            {
+                path: 'showAllServices',
+                element: <ShowAllServices></ShowAllServices>
             },
             {
                 path: 'about',

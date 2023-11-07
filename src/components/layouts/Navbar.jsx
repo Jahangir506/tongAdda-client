@@ -110,16 +110,7 @@ const Navbar = () => {
                   >
                     Add Service
                   </NavLink>
-                  <NavLink
-                    to="/singleServices"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "text-sm capitalize font-medium border-t-4 border-darkBrown text-center my-3 border-l-0 rounded-2xl"
-                        : "btn btn-ghost btn-sm text-sm capitalize"
-                    }
-                  >
-                    Single Services
-                  </NavLink>
+                
                   <NavLink
                     to="/manageServices"
                     className={({ isActive }) =>
@@ -168,7 +159,7 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu dropdown-content z-[1] p-4 shadow dark:bg-zinc-700  bg-base-100 rounded-box w-40 mt-4"
+                className="menu dropdown-content z-[1] p-4 shadow dark:bg-zinc-700  bg-white rounded-box w-40 mt-4"
               >
                 <div className="text-center dark:text-white">
                   {user && <p className="mb-3">{user?.displayName}</p>}
