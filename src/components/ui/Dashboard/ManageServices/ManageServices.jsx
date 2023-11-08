@@ -88,7 +88,7 @@ const ManageServices = () => {
   return (
     <>
     <Helmet>
-      <title>TongAdda || Dashboard/Manage Service</title>
+      <title>TongAdda || ManageService</title>
     </Helmet>
       <div className="w-full mx-auto my-24">
       <div className="mb-24">

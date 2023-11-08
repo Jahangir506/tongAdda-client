@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import loadingImg from "../../../../../assets/images/BeanEater.gif";
 import useAuth from "../../../../../hooks/useAuth";
@@ -6,10 +7,9 @@ import { useServices } from "../../../../../hooks/useServices";
 import Footer from "../../../../../pages/Footer/Footer";
 
 const UpdateService = () => {
-    const { isLoading } = useServices();
+  const { isLoading } = useServices();
   const { user } = useAuth();
   const navigate = useNavigate();
-
 
   const handleAdd = (e) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ const UpdateService = () => {
       yourEmail,
       serviceArea,
       price,
-      description
+      description,
     };
     console.log(addService);
 
@@ -59,6 +59,9 @@ const UpdateService = () => {
   return (
     <>
       <div>
+        <Helmet>
+          <title>TongAdda || UpdateProductService</title>
+        </Helmet>
         <div className="max-w-7xl mx-auto my-32">
           <h1 className="text-4xl font-semibold text-center mb-10 font-rancho">
             Updated Product Services

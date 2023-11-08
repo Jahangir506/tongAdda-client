@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const ManageServiceCard = ({ manageService, handleUpdate, handleDelete }) => {
   const { _id, pictureURL, price, serviceName, status } = manageService || {};
+  console.log(manageService);
   return (
     <>
       <tr>
@@ -37,14 +38,14 @@ const ManageServiceCard = ({ manageService, handleUpdate, handleDelete }) => {
           </div>
         </td>
         <td>{serviceName}</td>
-        <td>${price}</td>
+        <td><span className="text-base font-bold">$ </span>{price}</td>
         <th>
           {status === "confirmed" ? (
-            <span className="font-bold text-primary">Confirmed</span>
+            <span className="font-bold text-blue-700">accepted</span>
           ) : (
             <button
               onClick={() => handleUpdate(_id)}
-              className="btn btn-ghost btn-xs"
+              className="btn btn-ghost btn-xs bg-blue-300/20"
             >
               Please Confirm
             </button>

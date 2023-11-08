@@ -5,6 +5,7 @@ import useAuth from "../../../../hooks/useAuth";
 import { useServices } from "../../../../hooks/useServices";
 import Footer from "../../../../pages/Footer/Footer";
 import loadingImg from "../../../../assets/images/BeanEater.gif";
+import { Helmet } from "react-helmet-async";
 
 const AddServices = () => {
   const { isLoading } = useServices();
@@ -60,6 +61,9 @@ const AddServices = () => {
   return (
     <>
       <div>
+        <Helmet>
+          <title>TongAdda || AddService</title>
+        </Helmet>
         <div className="max-w-7xl mx-auto my-32">
           <h1 className="text-4xl font-semibold text-center mb-10 font-rancho">
             Add Product Services
