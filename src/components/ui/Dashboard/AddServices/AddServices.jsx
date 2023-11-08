@@ -131,7 +131,7 @@ const AddServices = () => {
                       type="text"
                       name="yourEmail"
                       placeholder="Your Email"
-                      defaultValue={user?.email}
+                      defaultValue={user?.email ? user?.email : ""}
                       disabled
                       className="input input-bordered w-full select-warning dark:bg-black/10 opacity-50"
                     />

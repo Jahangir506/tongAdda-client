@@ -4,7 +4,7 @@ import AdminLayouts from "../components/layouts/AdminLayouts";
 import AddServices from "../components/ui/Dashboard/AddServices/AddServices";
 import ManageServices from "../components/ui/Dashboard/ManageServices/ManageServices";
 import UpdateService from "../components/ui/Dashboard/ManageServices/UpdateService/UpdateService";
-import MySchedules from "../components/ui/Dashboard/MySchedules";
+import MySchedules from "../components/ui/MySchedule/Booking";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import ErrorPages from "../pages/ErrorPages/ErrorPages";
