@@ -1,11 +1,11 @@
 import axios from "axios";
-import loadingImg from "../../assets/images/BeanEater.gif";
 import { Helmet } from "react-helmet-async";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import loadingImg from "../../assets/images/BeanEater.gif";
 import useAuth from "../../hooks/useAuth";
-import Footer from "../Footer/Footer";
 import { useServices } from "../../hooks/useServices";
+import Footer from "../Footer/Footer";
 
 const SingleServices = () => {
   const { isLoading } = useServices();
@@ -23,7 +23,7 @@ const SingleServices = () => {
     service_price,
   } = services || {};
 
-  const handleUpdateProducts = (e) => {
+  const handleBook = (e) => {
     e.preventDefault();
     const form = e.target;
     const serviceImage = form.serviceImage.value;
@@ -130,7 +130,7 @@ const SingleServices = () => {
                         </h1>
                       </div>
                       <div className="max-w-4xl mx-auto">
-                        <form onSubmit={handleUpdateProducts} className="my-6">
+                        <form onSubmit={handleBook} className="my-6">
                           <div className="flex justify-between gap-6">
                             <div className="form-control w-full">
                               <label className="label">
@@ -263,7 +263,7 @@ const SingleServices = () => {
                           <div className="my-5">
                             <input
                               type="submit"
-                              value="Confirm Book"
+                              value="Confirm Purchase"
                               className="btn bg-darkBrown hover:bg-darkBrownHover text-white w-full"
                             ></input>
                           </div>

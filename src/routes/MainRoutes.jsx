@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import AdminLayouts from "../components/layouts/AdminLayouts";
-import AddServices from "../components/ui/AddServices";
-import ManageServices from "../components/ui/ManageServices";
-import Schedules from "../components/ui/MySchedules";
+import AddServices from "../components/ui/Dashboard/AddServices/AddServices";
+import ManageServices from "../components/ui/Dashboard/ManageServices/ManageServices";
+import UpdateService from "../components/ui/Dashboard/ManageServices/UpdateService/UpdateService";
+import MySchedules from "../components/ui/Dashboard/MySchedules";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import ErrorPages from "../pages/ErrorPages/ErrorPages";
@@ -39,12 +40,16 @@ const routes = createBrowserRouter([
                 element: <PrivateRoutes><AddServices></AddServices></PrivateRoutes>
             },
             {
-                path: '/manageServices',
+                path: 'manageServices',
                 element: <PrivateRoutes><ManageServices></ManageServices></PrivateRoutes>
             },
             {
+                path: 'addService/update',
+                element: <PrivateRoutes><UpdateService></UpdateService></PrivateRoutes>
+            },
+            {
                 path: 'schedules',
-                element: <PrivateRoutes><Schedules></Schedules></PrivateRoutes>
+                element: <PrivateRoutes><MySchedules></MySchedules></PrivateRoutes>
             },
             {
                 path: 'showAllServices',
