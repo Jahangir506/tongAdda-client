@@ -1,8 +1,15 @@
-# React + Vite
+## TongAdda = Cafe shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Live Site : https://music-town-bd2023.netlify.app/
 
-Currently, two official plugins are available:
+### Client Side Code : https://github.com/Porgramming-Hero-web-course/b8a11-client-side-Jahangir506
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Server Side Code : https://github.com/Porgramming-Hero-web-course/b8a11-server-side-Jahangir506
+## Added 5 Projects Features
+
+- It's a place to have tea or a place to spend time, book online or order food online through the website.
+- This website shows 4 popular services on its home page, some extra sections, and a navbar above and a footer below.
+- tailwind, react, react router dom, firebase these are used, backend: mongodb, jwt, etc.
+-  Various exclusive cafe service are available from this website
+- Different types of cafe service product cards can be added, deleted and updated.
+
