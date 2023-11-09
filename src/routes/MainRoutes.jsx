@@ -59,7 +59,7 @@ const routes = createBrowserRouter([
             {
                 path: '/services/singleService/:id',
                 element: <PrivateRoutes><SingleServices></SingleServices></PrivateRoutes>,
-                loader: ({params}) => fetch(`https://tong-adda-server.vercel.app//services/${params.id}`)
+                loader: ({params}) => fetch(`https://tong-adda-server.vercel.app/services/${params.id}`)
             },
             {
                 path: 'about',
