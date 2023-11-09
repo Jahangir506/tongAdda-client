@@ -86,7 +86,7 @@ const Login = () => {
         .then(res=> res.json())
         .then(data => console.log(data))
         toast.success("Login Successfully", { id: toastId });
-        // navigate(location?.state ? location.state : "/");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         console.error(err);
