@@ -10,8 +10,6 @@ const Login = () => {
   const [showPass, setShowPass] = useState(false);
   const location = useLocation();
   const { user, signIn, googleSignIn } = useAuth();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState([]);
   const navigate = useNavigate();
 
   const handleGoogleSignIn = () => {
@@ -42,10 +40,13 @@ const Login = () => {
       });
   };
 
-  console.log(user);
+  // console.log(user);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    const from = e.target;
+    const email = from.email.value;
+    const password = from.password.value;
     
     if (password.length < 6) {
       Swal.fire("Opps!", "you have to enter at least 6 digit!", "error");
@@ -72,23 +73,20 @@ const Login = () => {
 
     const toastId = toast.loading("Logging in");
 
-    await signIn(email, password)
+    signIn(email, password)
       .then((result) => {
         const loginUser = result.user;
-        console.log(loginUser);
-        fetch("https://brand-shop-server-repo.vercel.app/user", {
-          method: "POST",
+        fetch('https://tong-adda-server.vercel.app//jwt', {
+          method: 'POST',
           headers: {
-            "content-type": "application/json",
+            'content-type': "application/json",
           },
-          body: JSON.stringify(loginUser),
+          body: JSON.stringify({email: email})
         })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-          });
+        .then(res=> res.json())
+        .then(data => console.log(data))
         toast.success("Login Successfully", { id: toastId });
-        navigate(location?.state ? location.state : "/");
+        // navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         console.error(err);
@@ -112,7 +110,7 @@ const Login = () => {
                   placeholder="email"
                   className="input input-bordered"
                   required
-                  onBlur={(e) => setEmail(e.target.value)}
+                  name="email"
                 />
               </div>
               <div className="form-control">
@@ -125,7 +123,7 @@ const Login = () => {
                     placeholder="password"
                     className="input input-bordered w-full"
                     required
-                    onBlur={(e) => setPassword(e.target.value)}
+                    name="password"
                   />
                   <span
                     onClick={() => setShowPass(!showPass)}

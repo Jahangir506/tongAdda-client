@@ -1,7 +1,7 @@
 import { FiEdit } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-const BookingService = ({booking, handleDelete, handleUpdate}) => {
+const BookingService = ({booking, handleDelete}) => {
     const { _id, pictureURL, price, serviceName, status } = booking || {};
     console.log(booking);
     return (
@@ -39,25 +39,6 @@ const BookingService = ({booking, handleDelete, handleUpdate}) => {
           </td>
           <td>{serviceName}</td>
           <td><span className="text-base font-bold">$ </span>{price}</td>
-          <th>
-            {status === "confirmed" ? (
-              <span className="font-bold text-blue-700">accepted</span>
-            ) : (
-              <button
-                onClick={() => handleUpdate(_id)}
-                className="btn btn-ghost btn-xs bg-blue-300/20"
-              >
-                Please Confirm
-              </button>
-            )}
-          </th>
-          <th>
-            <Link to='/addService/update'>
-              <button className="bg-darkBrown/75 p-3 text-white hover:bg-darkBrownHover text-lg rounded">
-                <FiEdit />
-              </button>
-            </Link>
-          </th>
         </tr>
       </>
     );

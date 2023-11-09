@@ -1,15 +1,18 @@
 import axios from "axios";
-import { Helmet } from "react-helmet-async";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import loadingImg from "../../../../../assets/images/BeanEater.gif";
 import useAuth from "../../../../../hooks/useAuth";
 import { useServices } from "../../../../../hooks/useServices";
 import Footer from "../../../../../pages/Footer/Footer";
 
-const UpdateService = () => {
-  const { isLoading } = useServices();
+const AddServiceUpdate = () => {
+    const addService = useLoaderData()
+    const { _id, pictureURL, price, serviceName,serviceArea, description } = addService || {};
+    const { isLoading } = useServices();
   const { user } = useAuth();
   const navigate = useNavigate();
+
 
   const handleAdd = (e) => {
     e.preventDefault();
@@ -31,16 +34,16 @@ const UpdateService = () => {
       yourEmail,
       serviceArea,
       price,
-      description,
+      description
     };
     console.log(addService);
 
-    axios.post("http://localhost:5007/addService", addService).then((res) => {
+    axios.put(`https://tong-adda-server.vercel.app//addService/update/${_id}`, addService).then((res) => {
       console.log(res.data);
-      if (res.data.insertedId) {
+      if (res.data.modifiedCount> 0) {
         Swal.fire({
           title: "success!",
-          text: "Service added successfully",
+          text: "Service updated successfully",
           icon: "success",
           confirmButtonText: "Ok",
         });
@@ -56,15 +59,12 @@ const UpdateService = () => {
     );
   }
 
+
   return (
     <>
-      <div>
-        <Helmet>
-          <title>TongAdda || UpdateProductService</title>
-        </Helmet>
-        <div className="max-w-7xl mx-auto my-32">
+     <div className="max-w-7xl mx-auto mt-28 mb-16">
           <h1 className="text-4xl font-semibold text-center mb-10 font-rancho">
-            Updated Product Services
+            Update Product Services
           </h1>
           <div className="max-w-4xl mx-auto">
             <form onSubmit={handleAdd} className="my-6">
@@ -79,6 +79,7 @@ const UpdateService = () => {
                     <input
                       type="text"
                       name="pictureURL"
+                      defaultValue={pictureURL}
                       placeholder="Picture url"
                       className="dark:bg-black/10 input input-bordered w-full select-warning bg-blue-300/10"
                     />
@@ -94,6 +95,7 @@ const UpdateService = () => {
                     <input
                       type="text"
                       name="serviceName"
+                      defaultValue={serviceName}
                       placeholder="Service name"
                       className="dark:bg-black/10 input input-bordered w-full select-warning bg-blue-300/10"
                     />
@@ -129,7 +131,7 @@ const UpdateService = () => {
                       type="text"
                       name="yourEmail"
                       placeholder="Your Email"
-                      defaultValue={user?.email}
+                      defaultValue={user?.email ? user?.email : ""}
                       disabled
                       className="input input-bordered w-full select-warning dark:bg-black/10 opacity-50"
                     />
@@ -147,6 +149,7 @@ const UpdateService = () => {
                     <input
                       type="text"
                       name="serviceArea"
+                      defaultValue={serviceArea}
                       placeholder="Service Area"
                       className="input input-bordered w-full select-warning dark:bg-black/10 bg-blue-300/10"
                     />
@@ -160,6 +163,7 @@ const UpdateService = () => {
                     <input
                       type="text"
                       name="price"
+                      defaultValue={price}
                       placeholder="Price"
                       className="input input-bordered w-full select-warning dark:bg-black/10 bg-blue-300/10"
                     />
@@ -181,13 +185,13 @@ const UpdateService = () => {
                       cols="131"
                       rows="4"
                       placeholder="Description"
+                      defaultValue={description}
                       className="dark:bg-black/10 w-full rounded-lg p-4 textarea textarea-warning bg-blue-200/10"
                       required
                     ></textarea>
                   </label>
                 </div>
               </div>
-
               <div className="my-5">
                 <input
                   type="submit"
@@ -198,9 +202,8 @@ const UpdateService = () => {
             </form>
           </div>
         </div>
-      </div>
-      <Footer></Footer>
+        <Footer></Footer>
     </>
   );
 };
-export default UpdateService;
+export default AddServiceUpdate;

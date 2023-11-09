@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const ManageServiceCard = ({ manageService, handleUpdate, handleDelete }) => {
   const { _id, pictureURL, price, serviceName, status } = manageService || {};
-  console.log(manageService);
   return (
     <>
       <tr>
@@ -52,7 +51,7 @@ const ManageServiceCard = ({ manageService, handleUpdate, handleDelete }) => {
           )}
         </th>
         <th>
-          <Link to='/addService/update'>
+          <Link to={`/manageServices/addService/confirm/${_id}`}>
             <button className="bg-darkBrown/75 p-3 text-white hover:bg-darkBrownHover text-lg rounded">
               <FiEdit />
             </button>

@@ -1,11 +1,11 @@
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import loadingImg from "../../../../assets/images/BeanEater.gif";
 import useAuth from "../../../../hooks/useAuth";
 import { useServices } from "../../../../hooks/useServices";
 import Footer from "../../../../pages/Footer/Footer";
-import loadingImg from "../../../../assets/images/BeanEater.gif";
-import { Helmet } from "react-helmet-async";
 
 const AddServices = () => {
   const { isLoading } = useServices();
@@ -37,7 +37,7 @@ const AddServices = () => {
     };
     console.log(addService);
 
-    axios.post("http://localhost:5007/addService", addService).then((res) => {
+    axios.post("https://tong-adda-server.vercel.app//addService", addService).then((res) => {
       console.log(res.data);
       if (res.data.insertedId) {
         Swal.fire({

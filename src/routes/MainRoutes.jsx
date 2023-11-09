@@ -2,9 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import AdminLayouts from "../components/layouts/AdminLayouts";
 import AddServices from "../components/ui/Dashboard/AddServices/AddServices";
+import AddServiceUpdate from "../components/ui/Dashboard/ManageServices/AddServiceUpdate/AddServiceUpdate";
 import ManageServices from "../components/ui/Dashboard/ManageServices/ManageServices";
-import UpdateService from "../components/ui/Dashboard/ManageServices/UpdateService/UpdateService";
-import MySchedules from "../components/ui/MySchedule/Booking";
+import Booking from "../components/ui/MySchedule/Booking";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import ErrorPages from "../pages/ErrorPages/ErrorPages";
@@ -44,12 +44,13 @@ const routes = createBrowserRouter([
                 element: <PrivateRoutes><ManageServices></ManageServices></PrivateRoutes>
             },
             {
-                path: 'addService/update',
-                element: <PrivateRoutes><UpdateService></UpdateService></PrivateRoutes>
+                path: '/manageServices/addService/confirm/:id',
+                element: <PrivateRoutes><AddServiceUpdate></AddServiceUpdate></PrivateRoutes>,
+                loader: ({params}) => fetch(`https://tong-adda-server.vercel.app//addService/update/${params.id}`)
             },
             {
                 path: 'schedules',
-                element: <PrivateRoutes><MySchedules></MySchedules></PrivateRoutes>
+                element: <PrivateRoutes><Booking></Booking></PrivateRoutes>
             },
             {
                 path: 'showAllServices',
@@ -58,7 +59,7 @@ const routes = createBrowserRouter([
             {
                 path: '/services/singleService/:id',
                 element: <PrivateRoutes><SingleServices></SingleServices></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5007/services/${params.id}`)
+                loader: ({params}) => fetch(`https://tong-adda-server.vercel.app//services/${params.id}`)
             },
             {
                 path: 'about',

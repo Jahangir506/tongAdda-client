@@ -9,7 +9,7 @@ const ManageServices = () => {
   const { user } = useAuth()
   const [manageServices, setManageServices] = useState([]);
 
-  const url = `http://localhost:5007/addService?email=${user.email}`;
+  const url = `https://tong-adda-server.vercel.app//addService?email=${user.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -31,7 +31,7 @@ const ManageServices = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5007/addService/${id}`, {
+        fetch(`https://tong-adda-server.vercel.app//addService/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -60,8 +60,8 @@ const ManageServices = () => {
       confirmButtonText: "Yes, confirm it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5007/addService/${id}`, {
-          method: "PUT",
+        fetch(`https://tong-adda-server.vercel.app//addService/request/confirm/${id}`, {
+          method: "PATCH",
           headers: {
             "content-type": "application/json",
           },
@@ -71,7 +71,7 @@ const ManageServices = () => {
           .then((data) => {
             console.log(data);
             if (data.modifiedCount > 0) {
-              Swal.fire("confirm!", "Confirm Successfully.", "success");
+              Swal.fire("Confirm!", "Confirm Successfully.", "success");
               const remaining = manageServices.filter(
                 (manageService) => manageService._id !== id
               );
