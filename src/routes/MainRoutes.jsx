@@ -46,7 +46,7 @@ const routes = createBrowserRouter([
             {
                 path: '/manageServices/addService/confirm/:id',
                 element: <PrivateRoutes><AddServiceUpdate></AddServiceUpdate></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5007/addService/update/${params.id}`)
+                loader: ({params}) => fetch(`https://tong-adda-server.vercel.app/addService/update/${params.id}`)
             },
             {
                 path: 'schedules',
@@ -59,7 +59,7 @@ const routes = createBrowserRouter([
             {
                 path: '/services/singleService/:id',
                 element: <PrivateRoutes><SingleServices></SingleServices></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5007/services/${params.id}`)
+                loader: ({params}) => fetch(`https://tong-adda-server.vercel.app/services/${params.id}`)
             },
             {
                 path: 'about',

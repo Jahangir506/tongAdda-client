@@ -7,7 +7,7 @@
 //     const { user } = useAuth();
 //     const [pendingService, setPendingService] = useState([]);
   
-//     const url = `http://localhost:5007/bookings?email=${user?.email}`;
+//     const url = `https://tong-adda-server.vercel.app/bookings?email=${user?.email}`;
   
 //     useEffect(() => {
 //       fetch(url)
@@ -29,7 +29,7 @@
 //           confirmButtonText: "Yes, confirm it!",
 //         }).then((result) => {
 //           if (result.isConfirmed) {
-//             fetch(`http://localhost:5007/addService/pending/status/${id}`, {
+//             fetch(`https://tong-adda-server.vercel.app/addService/pending/status/${id}`, {
 //               method: "PATCH",
 //               headers: {
 //                 "content-type": "application/json",

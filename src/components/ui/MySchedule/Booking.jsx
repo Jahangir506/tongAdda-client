@@ -10,7 +10,7 @@ const Booking = () => {
   const { user } = useAuth();
   const [bookings, setBookings] = useState([]);
 
-  const url = `http://localhost:5007/bookings?email=${user?.email}`;
+  const url = `https://tong-adda-server.vercel.app/bookings?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -32,7 +32,7 @@ const Booking = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5007/bookings/${id}`, {
+        fetch(`https://tong-adda-server.vercel.app/bookings/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -61,7 +61,7 @@ const Booking = () => {
       confirmButtonText: "Yes, confirm it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5007/addService/pending/status/${id}`, {
+        fetch(`https://tong-adda-server.vercel.app/addService/pending/status/${id}`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json",

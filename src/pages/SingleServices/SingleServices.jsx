@@ -47,7 +47,7 @@ const SingleServices = () => {
     console.log(booking);
 
     axios
-      .post("http://localhost:5007/bookings", booking)
+      .post("https://tong-adda-server.vercel.app/bookings", booking)
       .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {

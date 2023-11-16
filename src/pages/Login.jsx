@@ -16,7 +16,7 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
-        fetch("http://localhost:5007/user", {
+        fetch("https://tong-adda-server.vercel.app/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -76,7 +76,7 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const loginUser = result.user;
-        fetch('http://localhost:5007/jwt', {
+        fetch('https://tong-adda-server.vercel.app/jwt', {
           method: 'POST',
           headers: {
             'content-type': "application/json",
