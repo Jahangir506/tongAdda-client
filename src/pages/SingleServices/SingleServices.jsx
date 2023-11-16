@@ -23,6 +23,7 @@ const SingleServices = () => {
     service_price,
   } = services || {};
 
+  console.log(services);
   const handleBook = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -46,7 +47,7 @@ const SingleServices = () => {
     console.log(booking);
 
     axios
-      .post("https://tong-adda-server.vercel.app/bookings", booking)
+      .post("http://localhost:5007/bookings", booking)
       .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {
@@ -99,7 +100,6 @@ const SingleServices = () => {
                 <span>
                   Provider by
                   <span className="font-medium">
-                    {service_provider.provider_name}
                   </span>
                   , {service_area}
                 </span>
@@ -179,7 +179,6 @@ const SingleServices = () => {
                                   type="text"
                                   name="providerEmail"
                                   placeholder="Provider Email"
-                                  defaultValue={service_provider.provider_email}
                                   disabled
                                   className="input input-bordered w-full select-warning dark:bg-black/10 opacity-50"
                                 />

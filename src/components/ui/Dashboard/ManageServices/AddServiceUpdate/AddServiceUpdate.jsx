@@ -38,7 +38,7 @@ const AddServiceUpdate = () => {
     };
     console.log(addService);
 
-    axios.put(`https://tong-adda-server.vercel.app//addService/update/${_id}`, addService).then((res) => {
+    axios.put(`http://localhost:5007/addService/update/${_id}`, addService).then((res) => {
       console.log(res.data);
       if (res.data.modifiedCount> 0) {
         Swal.fire({

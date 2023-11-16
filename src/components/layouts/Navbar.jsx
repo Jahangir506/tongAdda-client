@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdDarkMode, MdOutlineWbSunny } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
@@ -144,7 +143,7 @@ const Navbar = () => {
         <div className="flex justify-center items-center gap-2">
           <button
             onClick={changeTheme}
-            className="btn-sm border flex justify-center items-center hover:bg-black/20 border-zinc-500 btn-circle hover:dark:bg-black/10 dark:text-black  rounded-full mr-1"
+            className="btn-sm border md:flex justify-center items-center hover:bg-black/20 border-zinc-500 btn-circle hover:dark:bg-black/10 dark:text-black  rounded-full mr-1 hidden"
           >
             <div>
               {mode === "dark" ? (
@@ -184,8 +183,8 @@ const Navbar = () => {
               to="/login"
               className={({ isActive }) =>
                 isActive
-                  ? "py-2 text-white bg-darkBrown hover:bg-darkBrownHover px-8 text-md rounded-md"
-                  : "py-2 text-white bg-darkBrown hover:bg-darkBrownHover px-8 text-md rounded-md"
+                  ? "py-2 text-white bg-darkBrown hover:bg-darkBrownHover btn-sm lg:btn-md w-20 lg:w-28 btn text-md rounded-md"
+                  : "py-2 text-white bg-darkBrown hover:bg-darkBrownHover btn-sm lg:btn-md w-20 lg:w-28 btn text-md rounded-md"
               }
             >
               Login

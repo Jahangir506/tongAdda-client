@@ -4,13 +4,13 @@ import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
 import Footer from "../../../pages/Footer/Footer";
 import BookingService from "./BookingService";
-import PendingServiceCard from "./PendingService/PendingServiceCard";
+import PendingServiceCard from "./PendingWork/PendingServiceCard";
 
 const Booking = () => {
   const { user } = useAuth();
   const [bookings, setBookings] = useState([]);
 
-  const url = `https://tong-adda-server.vercel.app//bookings?email=${user?.email}`;
+  const url = `http://localhost:5007/bookings?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -32,7 +32,7 @@ const Booking = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://tong-adda-server.vercel.app//bookings/${id}`, {
+        fetch(`http://localhost:5007/bookings/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -61,7 +61,7 @@ const Booking = () => {
       confirmButtonText: "Yes, confirm it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://tong-adda-server.vercel.app//addService/pending/status/${id}`, {
+        fetch(`http://localhost:5007/addService/pending/status/${id}`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json",

@@ -60,10 +60,10 @@ const Banner = () => {
             <img
               src={allImg[currentImg]}
               alt=""
-              className="w-full h-screen object-cover"
+              className="w-full h-[380px] md:h-screen object-cover"
             />
           </div>
-          <div className="absolute bg-black/50 h-screen w-full bottom-1/4 md:top-1/2 transform -translate-y-1/2 px-0.5 md:px-5 flex justify-between items-center">
+          <div className="absolute  lg:bg-black/75 h-screen w-full bottom-1/4 md:top-1/2 transform -translate-y-1/2 px-0.5 md:px-5 flex justify-between items-center">
             <button onClick={handleOnPreviousClick} className="">
               <FcPrevious className="bg-white/20 hover:bg-white/30 p-1 md:p-3 text-orange-500 text-3xl md:text-5xl rounded-full" />
             </button>
@@ -72,14 +72,14 @@ const Banner = () => {
             </button>
           </div>
         </div>
-        <div className="absolute text-white top-1/4 left-1/3">
-          <div className="px-2 mx-auto w-[700px]">
+        <div className="absolute text-white top-20 md:top-36 lg:top-1/4  md:left-32 lg:left-1/3">
+          <div className="px-2 mx-auto md:w-[600px] lg:w-[700px]">
             <div className="form-control my-6">
               <div className="input-group justify-center items-center">
                 <input
                   type="text"
                   placeholder="Search…"
-                  className="input input-bordered text-white w-full"
+                  className="input input-bordered text-white md:w-1/2 lg:w-full"
                 />
                 <button className="btn btn-square">
                   <svg
@@ -100,9 +100,9 @@ const Banner = () => {
               </div>
             </div>
             <div className=" w-full text-center space-y-8">
-              <h1 className="text-6xl m-0 font-bold">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl m-0 font-bold">
               Our services {" "}
-                <span className="text-darkBrown text-7xl font-bold">
+                <span className="text-darkBrown text-4xl md:text-6xl lg:text-7xl font-bold">
                   {/* Style will be inherited from the parent element */}
                   <Typewriter
                     words={["Tea", "Soups", "Juice", "Coffee!"]}
@@ -116,7 +116,7 @@ const Banner = () => {
                 </span>
               </h1>
               <p
-                className="max-w-2xl
+                className="max-w-lg lg:max-w-2xl text-sm lg:text-base
               "
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -124,7 +124,7 @@ const Banner = () => {
                 enim accusamus, iste et, quia optio blanditiis voluptas itaque
                 voluptate voluptatem quibusdam repellat!
               </p>
-              <button className="btn bg-darkBrown hover:bg-darkBrownHover border-none">
+              <button className="btn bg-darkBrown btn-sm lg:btn-md hover:bg-darkBrownHover border-none">
                 Book a table
               </button>
             </div>

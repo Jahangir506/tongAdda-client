@@ -37,7 +37,7 @@ const AddServices = () => {
     };
     console.log(addService);
 
-    axios.post("https://tong-adda-server.vercel.app//addService", addService).then((res) => {
+    axios.post("http://localhost:5007/addService", addService).then((res) => {
       console.log(res.data);
       if (res.data.insertedId) {
         Swal.fire({
