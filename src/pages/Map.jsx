@@ -1,4 +1,4 @@
-import {GoogleM}
+
 
 const Map = () => {
     return(
