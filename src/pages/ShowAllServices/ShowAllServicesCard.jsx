@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types'
 
 const ShowAllServicesCard = ({ service }) => {
   
@@ -46,7 +47,7 @@ const ShowAllServicesCard = ({ service }) => {
           <div>
             <h2 className="card-title text-center text-3xl">{service_name}</h2>
             <p className="my-4 w-[600px]">
-              {service_description.slice(0, 100)}
+              {service_description?.slice(0, 100)}
               <span className="text-blue-700 hover:underline font-medium ml-0.5 cursor-pointer">
                 <span>Read...</span>
               </span>
@@ -65,4 +66,9 @@ const ShowAllServicesCard = ({ service }) => {
     </>
   );
 };
+
+ShowAllServicesCard.propTypes = {
+  service: PropTypes.node
+}
+
 export default ShowAllServicesCard;

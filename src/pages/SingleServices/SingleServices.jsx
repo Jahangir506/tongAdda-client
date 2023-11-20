@@ -14,12 +14,10 @@ const SingleServices = () => {
     const navigate = useNavigate()
 
   const {
-    _id,
     service_image,
     service_name,
     service_description,
     service_area,
-    service_provider,
     service_price,
   } = services || {};
 

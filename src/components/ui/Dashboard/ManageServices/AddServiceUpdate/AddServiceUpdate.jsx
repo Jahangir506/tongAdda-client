@@ -13,6 +13,8 @@ const AddServiceUpdate = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
 
+  console.log(user);
+
 
   const handleAdd = (e) => {
     e.preventDefault();

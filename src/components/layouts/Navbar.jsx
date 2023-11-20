@@ -52,14 +52,14 @@ const Navbar = () => {
               Home
             </NavLink>
             <NavLink
-              to="/services"
+              to="showAllServices"
               className={({ isActive }) =>
                 isActive
                   ? "text-sm capitalize font-medium border-b-4 border-darkBrown border-l-0 border-t-0 border-r-0 "
                   : "btn btn-ghost btn-sm text-sm capitalize"
               }
             >
-              Service
+              Services
             </NavLink>
             <NavLink
               to="/menu"

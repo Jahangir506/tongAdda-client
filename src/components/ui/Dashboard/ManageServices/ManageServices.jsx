@@ -9,16 +9,22 @@ const ManageServices = () => {
   const { user } = useAuth()
   const [manageServices, setManageServices] = useState([]);
 
-  const url = `https://tong-adda-server.vercel.app/addService?email=${user.email}`;
+ console.log(user);
 
   useEffect(() => {
+    if(!user){
+  
+      return;
+    }
+    const url = `https://tong-adda-server.vercel.app/addService?email=${user.email}`;
+
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setManageServices(data);
         console.log(data);
       });
-  }, [url]);
+  }, [user]);
 
   const handleDelete = (id) => {
     Swal.fire({

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const PopularServices = ({service}) => {
+const PopularServices = ({ service }) => {
   const {
     _id,
     service_image,
@@ -12,12 +13,16 @@ const PopularServices = ({service}) => {
     <>
       <div className="card w-72 lg:w-96 bg-base-100 shadow-xl">
         <figure>
-          <img src={service_image} alt="Shoes" className="h-40 lg:h-64 w-96 object-fill"/>
+          <img
+            src={service_image}
+            alt="Shoes"
+            className="h-40 lg:h-64 w-96 object-fill"
+          />
         </figure>
         <div className="card-body p-3 lg:p-4">
           <h2 className="card-title text-center text-3xl">{service_name}</h2>
           <p className="my-0 lg:my-4">
-            {service_description.slice(0, 50)}{" "}
+            {service_description?.slice(0, 50)}{" "}
             <span className="text-blue-700 hover:underline font-medium">
               read...
             </span>
@@ -33,5 +38,11 @@ const PopularServices = ({service}) => {
         </div>
       </div>
     </>
-  );}
+  );
+};
+
+PopularServices.propTypes = {
+  service: PropTypes.node,
+};
+
 export default PopularServices;

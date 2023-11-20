@@ -28,10 +28,6 @@ const routes = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: 'services',
-                element: <Services></Services>
-            },
-            {
                 path: 'menu',
                 element:<Menu></Menu>
             },
